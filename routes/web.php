@@ -4,15 +4,20 @@ use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\NewsCategoryController as AdminNewsCategoryController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
-// Public Landing Page
+// Public Landing Page & News
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
 Route::post('/kontak', [ContactController::class, 'store'])->name('contact.store');
 
 // Admin Authentication (Guest only)
@@ -47,6 +52,13 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Testimonials CRUD
     Route::resource('testimonials', TestimonialController::class)->except(['show']);
     Route::post('testimonials/{testimonial}/toggle-publish', [TestimonialController::class, 'togglePublish'])->name('testimonials.toggle-publish');
+
+    // News & Articles CRUD
+    Route::resource('news', AdminNewsController::class);
+    Route::get('news/{news}/preview', [AdminNewsController::class, 'preview'])->name('news.preview');
+
+    // News Categories Management
+    Route::resource('news-categories', AdminNewsCategoryController::class)->except(['create', 'show', 'edit']);
 
     // Contact Messages
     Route::get('contacts', [AdminContactController::class, 'index'])->name('contacts.index');

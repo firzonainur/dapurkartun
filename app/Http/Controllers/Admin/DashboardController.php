@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Gallery;
+use App\Models\News;
 use App\Models\Slide;
 use App\Models\Testimonial;
 use Illuminate\View\View;
@@ -22,6 +23,9 @@ class DashboardController extends Controller
         $publishedTestimonialCount = Testimonial::where('is_published', true)->count();
         $totalTestimonialCount = Testimonial::count();
 
+        $publishedNewsCount = News::where('status', 'published')->count();
+        $totalNewsCount = News::count();
+
         $unreadContactCount = Contact::where('is_read', false)->count();
         $totalContactCount = Contact::count();
 
@@ -29,6 +33,18 @@ class DashboardController extends Controller
 
         // Aktivitas pengelolaan konten terbaru
         $recentActivities = collect();
+
+        foreach (News::latest('updated_at')->take(4)->get() as $item) {
+            $recentActivities->push([
+                'type' => 'News',
+                'badge' => 'Artikel',
+                'title' => $item->title,
+                'status' => $item->status_label,
+                'status_class' => $item->status === 'published' ? 'badge-success' : ($item->status === 'scheduled' ? 'badge-warning' : 'badge-neutral'),
+                'time' => $item->updated_at,
+                'edit_url' => route('admin.news.edit', $item->id),
+            ]);
+        }
 
         foreach (Gallery::latest('updated_at')->take(4)->get() as $item) {
             $recentActivities->push([
@@ -66,7 +82,7 @@ class DashboardController extends Controller
             ]);
         }
 
-        $recentActivities = $recentActivities->sortByDesc('time')->take(5);
+        $recentActivities = $recentActivities->sortByDesc('time')->take(6);
 
         return view('admin.dashboard', compact(
             'activeSlideCount',
@@ -75,6 +91,8 @@ class DashboardController extends Controller
             'totalGalleryCount',
             'publishedTestimonialCount',
             'totalTestimonialCount',
+            'publishedNewsCount',
+            'totalNewsCount',
             'unreadContactCount',
             'totalContactCount',
             'recentContacts',

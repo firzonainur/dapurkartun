@@ -15,7 +15,10 @@
             </p>
         </div>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="{{ route('admin.galleries.create') }}" class="adm-btn adm-btn-primary adm-btn-sm">
+            <a href="{{ route('admin.news.create') }}" class="adm-btn adm-btn-primary adm-btn-sm">
+                + Tulis Artikel
+            </a>
+            <a href="{{ route('admin.galleries.create') }}" class="adm-btn adm-btn-secondary adm-btn-sm">
                 + Tambah Karya
             </a>
             <a href="{{ route('admin.slides.create') }}" class="adm-btn adm-btn-secondary adm-btn-sm">
@@ -27,8 +30,21 @@
         </div>
     </div>
 
-    <!-- 4 Main Metric Stats from SQLite Database -->
-    <div class="metrics-grid">
+    <!-- Main Metric Stats from SQLite Database -->
+    <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));">
+        <div class="metric-card">
+            <div class="metric-info">
+                <h6>Artikel Berita</h6>
+                <h3>{{ $publishedNewsCount }} <span style="font-size: 0.95rem; color: #94A3B8; font-weight: 500;">/ {{ $totalNewsCount }}</span></h3>
+            </div>
+            <div class="metric-icon-box bg-orange-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+            </div>
+        </div>
+
         <div class="metric-card">
             <div class="metric-info">
                 <h6>Slide Aktif</h6>

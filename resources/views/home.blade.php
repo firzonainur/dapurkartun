@@ -13,6 +13,9 @@
     {{-- 4. Testimoni Section with Cartoon Speech Bubble Cards & Ratings --}}
     @include('components.testimonials')
 
-    {{-- 5. Kontak Section with Validated SQLite Form & WhatsApp Integration --}}
+    {{-- 5. News / Cerita Terbaru Section --}}
+    @include('components.news')
+
+    {{-- 6. Kontak Section with Validated SQLite Form & WhatsApp Integration --}}
     @include('components.contact')
 @endsection

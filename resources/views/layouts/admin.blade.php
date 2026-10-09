@@ -51,7 +51,7 @@
 
                 <!-- 2. Konten Website (Dropdown Group) -->
                 @php
-                    $isContentActive = request()->routeIs('admin.slides.*', 'admin.galleries.*', 'admin.gallery.*', 'admin.testimonials.*');
+                    $isContentActive = request()->routeIs('admin.slides.*', 'admin.galleries.*', 'admin.gallery.*', 'admin.testimonials.*', 'admin.news.*', 'admin.news-categories.*');
                 @endphp
                 <li class="sidebar-group {{ $isContentActive ? 'open' : '' }}" id="contentGroup">
                     <button type="button" class="sidebar-link {{ $isContentActive ? 'active' : '' }}" id="contentToggleBtn" aria-expanded="{{ $isContentActive ? 'true' : 'false' }}">
@@ -82,6 +82,12 @@
                             <a href="{{ route('admin.testimonials.index') }}" class="sidebar-sublink {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
                                 <span>&bull;</span>
                                 <span>Testimoni</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.news.index') }}" class="sidebar-sublink {{ request()->routeIs('admin.news.*', 'admin.news-categories.*') ? 'active' : '' }}">
+                                <span>&bull;</span>
+                                <span>News / Artikel</span>
                             </a>
                         </li>
                     </ul>

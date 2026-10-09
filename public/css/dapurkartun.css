@@ -1318,6 +1318,120 @@ img, svg {
 }
 
 /* ==========================================================================
+   NEWS & EDITORIAL ARTICLE PROSE STYLES
+   ========================================================================== */
+.article-prose {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: #2B1E3F;
+}
+
+.article-prose p {
+    margin-bottom: 1.5rem;
+}
+
+.article-prose h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--c-midnight);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+
+.article-prose h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--c-midnight);
+    margin-top: 2rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.3;
+}
+
+.article-prose h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--c-midnight);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.article-prose ul,
+.article-prose ol {
+    margin-bottom: 1.75rem;
+    padding-left: 1.75rem;
+}
+
+.article-prose ul {
+    list-style-type: disc;
+}
+
+.article-prose ol {
+    list-style-type: decimal;
+}
+
+.article-prose li {
+    margin-bottom: 0.65rem;
+    line-height: 1.7;
+}
+
+.article-prose blockquote {
+    border-left: 4px solid var(--c-orange);
+    padding: 1.25rem 1.75rem;
+    margin: 2.25rem 0;
+    background-color: var(--c-orange-light);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    font-style: italic;
+    color: var(--c-midnight);
+    font-size: 1.15rem;
+}
+
+.article-prose blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.article-prose a {
+    color: var(--c-orange);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.article-prose a:hover {
+    color: var(--c-orange-hover);
+}
+
+.article-prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--r-md);
+    border: var(--stroke-width) solid var(--c-midnight);
+    margin: 2rem 0;
+    box-shadow: var(--shadow-cartoon);
+}
+
+.article-prose figure {
+    margin: 2.25rem 0;
+}
+
+.article-prose figure figcaption {
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+    text-align: center;
+    margin-top: 0.75rem;
+    font-style: italic;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-cartoon-lg);
+}
+
+.news-card:hover .news-card-thumbnail img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
    ACCESSIBILITY: REDUCED MOTION (R-19, R-32)
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -1331,3 +1445,4 @@ img, svg {
         transform: none !important;
     }
 }
+

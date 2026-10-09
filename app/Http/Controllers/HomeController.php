@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\News;
 use App\Models\SiteSetting;
 use App\Models\Slide;
 use App\Models\Testimonial;
@@ -25,6 +26,13 @@ class HomeController extends Controller
             ->orderBy('sort_order', 'asc')
             ->get();
 
+        $latestNews = News::published()
+            ->with(['category', 'author'])
+            ->orderByRaw('CASE WHEN is_featured = 1 THEN 0 ELSE 1 END')
+            ->orderBy('published_at', 'desc')
+            ->take(3)
+            ->get();
+
         $settings = SiteSetting::all()->pluck('value', 'key')->toArray();
 
         $categories = [
@@ -35,6 +43,6 @@ class HomeController extends Controller
             'Desain Kreatif',
         ];
 
-        return view('home', compact('slides', 'galleries', 'testimonials', 'settings', 'categories'));
+        return view('home', compact('slides', 'galleries', 'testimonials', 'latestNews', 'settings', 'categories'));
     }
 }

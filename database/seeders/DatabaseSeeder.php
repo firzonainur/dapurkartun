@@ -214,5 +214,8 @@ class DatabaseSeeder extends Seeder
             'message' => 'Halo tim Dapur Kartun, kami berencana membuat serial buku dongeng 5 jilid dan ingin berkonsultasi mengenai gaya karakter kartunnya. Terima kasih!',
             'is_read' => false,
         ]);
+
+        // 7. News Categories and Articles
+        $this->call(NewsSeeder::class);
     }
 }
