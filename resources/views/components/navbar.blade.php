@@ -1,8 +1,8 @@
 <header class="site-header" role="banner">
     <div class="container header-inner">
         <!-- Logo -->
-        <a href="#beranda" class="brand-logo" aria-label="Beranda Dapur Kartun">
-            <img src="{{ asset('images/logo.svg') }}" alt="Logo Dapur Kartun" width="190" height="48">
+        <a href="#beranda" class="brand-logo" aria-label="Beranda {{ $settings['site_title'] ?? 'Dapur Kartun' }}">
+            <img src="{{ asset($settings['site_logo'] ?? 'images/logo.svg') }}" alt="{{ $settings['site_title'] ?? 'Logo Dapur Kartun' }}" width="190" height="48" style="max-height: 48px; object-fit: contain;">
         </a>
 
         <!-- Desktop Navigation Menu -->
@@ -36,8 +36,9 @@
 <div class="mobile-drawer-overlay"></div>
 <aside class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu Mobile">
     <div class="mobile-drawer-brand">
-        <img src="{{ asset('images/logo.svg') }}" alt="Dapur Kartun" width="160" height="40">
+        <img src="{{ asset($settings['site_logo'] ?? 'images/logo.svg') }}" alt="{{ $settings['site_title'] ?? 'Dapur Kartun' }}" width="160" height="40" style="max-height: 40px; object-fit: contain;">
     </div>
+
     <ul class="mobile-nav-list" style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
         <li><a href="#beranda" class="nav-link" style="font-size: 1.2rem;">Home</a></li>
         <li><a href="#tentang" class="nav-link" style="font-size: 1.2rem;">Tentang Kami</a></li>

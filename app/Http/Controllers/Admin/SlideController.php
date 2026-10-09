@@ -83,9 +83,13 @@ class SlideController extends Controller
         $imagePath = $slide->image;
 
         if ($request->hasFile('image_file')) {
-            // Delete old uploaded image if in storage
+            // Delete old uploaded image only if not used elsewhere
             if (str_starts_with($slide->image, 'storage/slides/')) {
-                Storage::disk('public')->delete(str_replace('storage/', '', $slide->image));
+                $isUsedElsewhere = Slide::where('id', '!=', $slide->id)->where('image', $slide->image)->exists()
+                    || \App\Models\Gallery::where('image', $slide->image)->exists();
+                if (!$isUsedElsewhere) {
+                    Storage::disk('public')->delete(str_replace('storage/', '', $slide->image));
+                }
             }
             $path = $request->file('image_file')->store('slides', 'public');
             $imagePath = 'storage/' . $path;
@@ -110,7 +114,11 @@ class SlideController extends Controller
     public function destroy(Slide $slide): RedirectResponse
     {
         if (str_starts_with($slide->image, 'storage/slides/')) {
-            Storage::disk('public')->delete(str_replace('storage/', '', $slide->image));
+            $isUsedElsewhere = Slide::where('id', '!=', $slide->id)->where('image', $slide->image)->exists()
+                || \App\Models\Gallery::where('image', $slide->image)->exists();
+            if (!$isUsedElsewhere) {
+                Storage::disk('public')->delete(str_replace('storage/', '', $slide->image));
+            }
         }
 
         $slide->delete();
@@ -118,6 +126,7 @@ class SlideController extends Controller
         return redirect()->route('admin.slides.index')
             ->with('success', 'Slide berhasil dihapus.');
     }
+
 
     public function toggleActive(Slide $slide): RedirectResponse
     {

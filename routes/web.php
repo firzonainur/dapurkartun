@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
-use App\Http\Controllers\Admin\ContactMessageController;
+use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\SettingController;
@@ -33,21 +33,30 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('slides', SlideController::class)->except(['show']);
     Route::post('slides/{slide}/toggle-active', [SlideController::class, 'toggleActive'])->name('slides.toggle-active');
 
-    // Galleries CRUD
+    // Galleries CRUD (Supports both /admin/gallery and /admin/galleries)
     Route::resource('galleries', GalleryController::class)->except(['show']);
+    Route::get('gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::get('gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+    Route::post('gallery', [GalleryController::class, 'store'])->name('gallery.store');
+    Route::get('gallery/{gallery}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+    Route::put('gallery/{gallery}', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::delete('gallery/{gallery}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
     Route::post('galleries/{gallery}/toggle-publish', [GalleryController::class, 'togglePublish'])->name('galleries.toggle-publish');
+    Route::post('gallery/{gallery}/toggle-publish', [GalleryController::class, 'togglePublish'])->name('gallery.toggle-publish');
 
     // Testimonials CRUD
     Route::resource('testimonials', TestimonialController::class)->except(['show']);
     Route::post('testimonials/{testimonial}/toggle-publish', [TestimonialController::class, 'togglePublish'])->name('testimonials.toggle-publish');
 
     // Contact Messages
-    Route::get('contacts', [ContactMessageController::class, 'index'])->name('contacts.index');
-    Route::get('contacts/{contact}', [ContactMessageController::class, 'show'])->name('contacts.show');
-    Route::post('contacts/{contact}/mark-read', [ContactMessageController::class, 'markAsRead'])->name('contacts.mark-read');
-    Route::delete('contacts/{contact}', [ContactMessageController::class, 'destroy'])->name('contacts.destroy');
+    Route::get('contacts', [AdminContactController::class, 'index'])->name('contacts.index');
+    Route::get('contacts/{contact}', [AdminContactController::class, 'show'])->name('contacts.show');
+    Route::post('contacts/{contact}/mark-read', [AdminContactController::class, 'markAsRead'])->name('contacts.mark-read');
+    Route::post('contacts/{contact}/toggle-read', [AdminContactController::class, 'toggleRead'])->name('contacts.toggle-read');
+    Route::delete('contacts/{contact}', [AdminContactController::class, 'destroy'])->name('contacts.destroy');
 
     // Site Settings
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('settings', [SettingController::class, 'update'])->name('settings.update');
 });
+

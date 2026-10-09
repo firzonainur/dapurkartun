@@ -29,17 +29,24 @@
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <div class="adm-form-group">
-                    <label for="image_file" class="adm-label">Unggah Berkas Gambar / Ilustrasi (SVG/PNG/JPG/WebP)</label>
-                    <input type="file" name="image_file" id="image_file" class="adm-input" accept="image/*">
+                    <label for="image_file" class="adm-label">Unggah Gambar Slide (SVG/PNG/JPG/WebP)</label>
+                    <input type="file" name="image_file" id="image_file" class="adm-input" accept="image/*" onchange="previewSlideImage(this)">
                     <small style="color: var(--adm-text-muted);">Maksimal ukuran 3MB</small>
                     @error('image_file') <span class="adm-error-msg">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="adm-form-group">
                     <label for="image_url" class="adm-label">Atau Gunakan Jalur Gambar Statis</label>
-                    <input type="text" name="image_url" id="image_url" class="adm-input" value="{{ old('image_url', 'images/slides/slide-1-dapur-imajinasi.svg') }}" placeholder="images/slides/...">
+                    <input type="text" name="image_url" id="image_url" class="adm-input" value="{{ old('image_url', 'images/slides/slide-1-dapur-imajinasi.svg') }}" placeholder="images/slides/..." oninput="previewStaticUrl(this.value)">
                     <small style="color: var(--adm-text-muted);">Gunakan jika memakai aset SVG bawaan</small>
                     @error('image_url') <span class="adm-error-msg">{{ $message }}</span> @enderror
+                </div>
+            </div>
+
+            <div class="adm-form-group">
+                <label class="adm-label">Pratinjau Gambar:</label>
+                <div style="background: #F8FAFC; border: 1px dashed var(--adm-border); border-radius: 8px; padding: 1rem; text-align: center;">
+                    <img id="imagePreview" src="{{ asset(old('image_url', 'images/slides/slide-1-dapur-imajinasi.svg')) }}" alt="Pratinjau Slide" style="max-height: 140px; border-radius: 8px; object-fit: contain;">
                 </div>
             </div>
 
@@ -79,4 +86,22 @@
             </div>
         </form>
     </div>
+
+    <script>
+        function previewSlideImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function previewStaticUrl(url) {
+            if (url) {
+                document.getElementById('imagePreview').src = '/' + url.replace(/^\//, '');
+            }
+        }
+    </script>
 @endsection
+

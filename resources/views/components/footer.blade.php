@@ -4,10 +4,10 @@
             <!-- Brand Column -->
             <div class="footer-brand">
                 <a href="#beranda">
-                    <img src="{{ asset('images/logo.svg') }}" alt="Logo Dapur Kartun" width="180" height="45" style="filter: brightness(0) invert(1);">
+                    <img src="{{ asset($settings['site_logo'] ?? 'images/logo.svg') }}" alt="{{ $settings['site_title'] ?? 'Logo Dapur Kartun' }}" width="180" height="45" style="filter: brightness(0) invert(1); max-height: 45px; object-fit: contain;">
                 </a>
                 <p>
-                    {{ $settings['site_tagline'] ?? 'Studio Ilustrasi & Animasi Penuh Cerita' }}. Tempat ide-ide segar diolah menjadi karya visual yang menyenangkan dan berkarakter.
+                    {{ $settings['site_tagline'] ?? 'Studio Ilustrasi dan Animasi Penuh Cerita' }}. Tempat ide-ide segar diolah menjadi karya visual yang menyenangkan dan berkarakter.
                 </p>
                 <!-- Social Channels -->
                 <div class="social-links" aria-label="Media Sosial Dapur Kartun">
@@ -79,7 +79,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {{ date('Y') }} Dapur Kartun Studio. Hak cipta dilindungi undang-undang.</p>
+            <p>&copy; {{ date('Y') }} {{ $settings['site_title'] ?? 'Dapur Kartun Studio' }}. {{ $settings['footer_info'] ?? 'Hak cipta dilindungi undang-undang.' }}</p>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <a href="{{ route('admin.login') }}" style="color: rgba(255, 255, 255, 0.4); font-size: 0.75rem;" title="Akses Panel Admin">
                     Panel Admin
@@ -88,3 +88,4 @@
         </div>
     </div>
 </footer>
+

@@ -29,26 +29,26 @@
             </div>
 
             <div style="margin-bottom: 1.25rem;">
-                <label class="adm-label">Gambar Saat Ini:</label>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
-                    <img src="{{ asset($slide->image) }}" alt="" style="height: 70px; border-radius: 8px; border: 1px solid var(--adm-border);">
-                    <span style="font-size: 0.85rem; color: var(--adm-text-muted);">{{ $slide->image }}</span>
+                <label class="adm-label">Pratinjau Gambar Saat Ini:</label>
+                <div style="background: #F8FAFC; border: 1px dashed var(--adm-border); border-radius: 8px; padding: 1rem; text-align: center; margin-top: 0.5rem;">
+                    <img id="imagePreview" src="{{ asset($slide->image) }}" alt="Pratinjau Slide" style="max-height: 140px; border-radius: 8px; object-fit: contain;">
                 </div>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <div class="adm-form-group">
                     <label for="image_file" class="adm-label">Ganti Berkas Gambar (Opsional)</label>
-                    <input type="file" name="image_file" id="image_file" class="adm-input" accept="image/*">
-                    <small style="color: var(--adm-text-muted);">Maksimal 3MB</small>
+                    <input type="file" name="image_file" id="image_file" class="adm-input" accept="image/*" onchange="previewSlideImage(this)">
+                    <small style="color: var(--adm-text-muted);">Maksimal 3MB (SVG/PNG/JPG/WebP)</small>
                     @error('image_file') <span class="adm-error-msg">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="adm-form-group">
                     <label for="image_url" class="adm-label">Atau Jalur Gambar Statis</label>
-                    <input type="text" name="image_url" id="image_url" class="adm-input" value="{{ old('image_url', $slide->image) }}">
+                    <input type="text" name="image_url" id="image_url" class="adm-input" value="{{ old('image_url', $slide->image) }}" oninput="previewStaticUrl(this.value)">
                 </div>
             </div>
+
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <div class="adm-form-group">
@@ -86,4 +86,22 @@
             </div>
         </form>
     </div>
+
+    <script>
+        function previewSlideImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function previewStaticUrl(url) {
+            if (url) {
+                document.getElementById('imagePreview').src = '/' + url.replace(/^\//, '');
+            }
+        }
+    </script>
 @endsection
+
