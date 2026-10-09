@@ -42,21 +42,6 @@
             font-size: 0.9rem;
             color: #64748B;
         }
-        .demo-credentials {
-            background-color: #FFF7ED;
-            border: 1px solid #FFEDD5;
-            border-radius: 8px;
-            padding: 0.85rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.825rem;
-            color: #9A3412;
-        }
-        .demo-credentials code {
-            font-weight: 700;
-            background: rgba(234, 88, 12, 0.1);
-            padding: 0.1rem 0.3rem;
-            border-radius: 4px;
-        }
     </style>
 </head>
 <body>
@@ -65,12 +50,6 @@
             <img src="{{ asset('images/logo.svg') }}" alt="Dapur Kartun" width="180" height="45">
             <h1>Masuk ke Dashboard</h1>
             <p>Akses khusus administrator untuk mengelola konten website.</p>
-        </div>
-
-        <div class="demo-credentials">
-            <strong>Kredensial Administrator Bawaan:</strong><br>
-            Email: <code>admin@dapurkartun.id</code><br>
-            Kata Sandi: <code>password123</code>
         </div>
 
         @if($errors->any())
@@ -89,7 +68,7 @@
                     name="email" 
                     id="email" 
                     class="adm-input" 
-                    value="{{ old('email', 'admin@dapurkartun.id') }}" 
+                    value="{{ old('email') }}" 
                     required 
                     autofocus
                     placeholder="nama@dapurkartun.id">
@@ -103,7 +82,6 @@
                         name="password" 
                         id="password" 
                         class="adm-input" 
-                        value="password123" 
                         required
                         placeholder="Masukkan kata sandi">
                     <button type="button" class="adm-password-toggle" id="togglePasswordBtn" aria-label="Tampilkan atau sembunyikan kata sandi">
