@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+    <defs>
+        <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFD6A5" />
+            <stop offset="100%" stop-color="#FFBC80" />
+        </linearGradient>
+        <linearGradient id="apronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF6B35" />
+            <stop offset="100%" stop-color="#E04812" />
+        </linearGradient>
+        <linearGradient id="brushWood" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C68B59" />
+            <stop offset="100%" stop-color="#8B5A2B" />
+        </linearGradient>
+        <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+    </defs>
+    <!-- Magic Splash Background -->
+    <circle cx="300" cy="300" r="230" fill="#FFECC7" opacity="0.45"/>
+    <path d="M120 280 C80 180 200 100 300 90 C420 80 520 180 490 300 C470 420 380 500 270 510 C160 520 140 380 120 280 Z" fill="#F4E8FF" opacity="0.6"/>
+    
+    <!-- Floating Paint Splats -->
+    <path d="M80 180 Q60 150 90 140 Q130 130 110 170 Q100 200 80 180 Z" fill="#38B6FF" stroke="#1F1135" stroke-width="4"/>
+    <path d="M480 140 Q520 110 530 150 Q540 190 500 180 Q460 170 480 140 Z" fill="#FFC107" stroke="#1F1135" stroke-width="4"/>
+    <circle cx="510" cy="380" r="16" fill="#FF6B35" stroke="#1F1135" stroke-width="4"/>
+    <circle cx="100" cy="370" r="14" fill="#38B6FF" stroke="#1F1135" stroke-width="4"/>
+    
+    <!-- Big Giant Magic Paintbrush -->
+    <g transform="translate(180, 20) rotate(32 200 200)">
+        <path d="M190 20 L220 20 L216 380 L194 380 Z" fill="url(#brushWood)" stroke="#1F1135" stroke-width="6" stroke-linejoin="round"/>
+        <rect x="186" y="380" width="38" height="30" rx="4" fill="#E2E8F0" stroke="#1F1135" stroke-width="6"/>
+        <path d="M186 410 C186 470 205 490 205 490 C205 490 224 470 224 410 Z" fill="#38B6FF" stroke="#1F1135" stroke-width="6"/>
+        <path d="M200 450 C200 480 205 490 205 490 C205 490 210 480 210 450 Z" fill="#FFFDF8"/>
+    </g>
+
+    <!-- Character Body / Koki Maskot -->
+    <g transform="translate(170, 160)">
+        <!-- Head -->
+        <ellipse cx="130" cy="140" rx="95" ry="90" fill="url(#bodyGrad)" stroke="#1F1135" stroke-width="7"/>
+        <!-- Ears -->
+        <circle cx="35" cy="140" r="22" fill="url(#bodyGrad)" stroke="#1F1135" stroke-width="6"/>
+        <circle cx="225" cy="140" r="22" fill="url(#bodyGrad)" stroke="#1F1135" stroke-width="6"/>
+        <!-- Big Chef Hat with Art Flairs -->
+        <path d="M45 75 C10 65 15 20 50 15 C45 -25 110 -35 130 5 C160 -35 225 -20 215 20 C250 25 250 65 215 75 Z" fill="#FFFDF8" stroke="#1F1135" stroke-width="7" stroke-linejoin="round"/>
+        <rect x="60" y="72" width="140" height="26" rx="8" fill="url(#apronGrad)" stroke="#1F1135" stroke-width="6"/>
+        <circle cx="85" cy="85" r="4" fill="#FFFDF8"/>
+        <circle cx="130" cy="85" r="4" fill="#FFFDF8"/>
+        <circle cx="175" cy="85" r="4" fill="#FFFDF8"/>
+
+        <!-- Eyes & Cheeks -->
+        <!-- Cheeks -->
+        <ellipse cx="75" cy="165" rx="16" ry="10" fill="#FF8A8A" opacity="0.6"/>
+        <ellipse cx="185" cy="165" rx="16" ry="10" fill="#FF8A8A" opacity="0.6"/>
+        <!-- Eyes -->
+        <ellipse cx="85" cy="135" rx="18" ry="24" fill="#1F1135"/>
+        <circle cx="80" cy="125" r="8" fill="#FFFDF8"/>
+        <circle cx="92" cy="144" r="3.5" fill="#FFFDF8"/>
+        
+        <ellipse cx="175" cy="135" rx="18" ry="24" fill="#1F1135"/>
+        <circle cx="170" cy="125" r="8" fill="#FFFDF8"/>
+        <circle cx="182" cy="144" r="3.5" fill="#FFFDF8"/>
+        
+        <!-- Eyebrows -->
+        <path d="M68 105 Q85 96 100 106" stroke="#1F1135" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <path d="M160 106 Q175 96 192 105" stroke="#1F1135" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+        <!-- Cute Nose & Big Happy Smile -->
+        <path d="M125 145 C125 152 135 152 135 145" stroke="#1F1135" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M95 168 Q130 215 165 168" fill="#E04812" stroke="#1F1135" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M108 178 Q130 200 152 178 Q130 168 108 178 Z" fill="#FFFDF8"/>
+        <path d="M112 188 Q130 210 148 188 Q130 182 112 188 Z" fill="#FF8A8A"/>
+
+        <!-- Torso & Chef Apron -->
+        <path d="M70 230 L50 370 C50 390 210 390 210 370 L190 230 Z" fill="url(#apronGrad)" stroke="#1F1135" stroke-width="7" stroke-linejoin="round"/>
+        <!-- Apron Straps -->
+        <path d="M75 230 L95 280 L165 280 L185 230" fill="none" stroke="#FFFDF8" stroke-width="6"/>
+        <!-- Palette in Hand -->
+        <g transform="translate(150, 230) rotate(-15)">
+            <path d="M0 40 C-20 0 60 -30 90 10 C120 50 80 100 40 90 C10 80 20 60 0 40 Z" fill="#FFFDF8" stroke="#1F1135" stroke-width="6"/>
+            <circle cx="65" cy="55" r="10" fill="#1F1135"/>
+            <!-- Paint Dots -->
+            <circle cx="35" cy="18" r="8" fill="#FF6B35"/>
+            <circle cx="65" cy="14" r="8" fill="#FFC107"/>
+            <circle cx="85" cy="35" r="8" fill="#38B6FF"/>
+            <circle cx="45" cy="65" r="8" fill="#9C27B0"/>
+        </g>
+    </g>
+</svg>

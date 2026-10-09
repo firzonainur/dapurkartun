@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+    <defs>
+        <linearGradient id="g_artwork-5-kelinci-antariksa.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#EC4899" />
+            <stop offset="100%" stop-color="#DB2777" />
+        </linearGradient>
+    </defs>
+    <!-- Background Frame -->
+    <rect width="600" height="450" rx="24" fill="url(#g_artwork-5-kelinci-antariksa.svg)"/>
+    <!-- Decorative Cartoon Waves / Hills -->
+    <path d="M0 350 Q150 280 300 340 Q450 400 600 320 L600 450 L0 450 Z" fill="#FFFDF8" fill-opacity="0.25"/>
+    <path d="M0 380 Q200 320 400 370 Q500 390 600 360 L600 450 L0 450 Z" fill="#FFFDF8" fill-opacity="0.35"/>
+    
+    <!-- Central Cartoon Art Focal Point -->
+    <g transform="translate(180, 80)">
+        <circle cx="120" cy="120" r="110" fill="#FFFDF8" stroke="#1F1135" stroke-width="7"/>
+        <!-- Inner Graphics -->
+        <circle cx="120" cy="120" r="85" fill="#EC4899" fill-opacity="0.2"/>
+        <!-- Character Icon Graphic -->
+        <path d="M80 150 C70 90 170 90 160 150 Z" fill="#EC4899" stroke="#1F1135" stroke-width="6"/>
+        <circle cx="100" cy="115" r="12" fill="#1F1135"/>
+        <circle cx="140" cy="115" r="12" fill="#1F1135"/>
+        <circle cx="97" cy="112" r="4" fill="#FFFDF8"/>
+        <circle cx="137" cy="112" r="4" fill="#FFFDF8"/>
+        <path d="M110 130 Q120 140 130 130" stroke="#1F1135" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <polygon points="120,40 126,55 142,60 126,65 120,80 114,65 98,60 114,55" fill="#FFC107" stroke="#1F1135" stroke-width="3"/>
+    </g>
+    
+    <!-- Cartoon Badge Label in artwork -->
+    <g transform="translate(40, 40)">
+        <rect x="0" y="0" width="110" height="34" rx="17" fill="#FFFDF8" stroke="#1F1135" stroke-width="4"/>
+        <text x="55" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#1F1135" text-anchor="middle" letter-spacing="1">KARAKTER</text>
+    </g>
+</svg>

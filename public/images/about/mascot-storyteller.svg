@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+    <!-- Big Book Stack Base -->
+    <g transform="translate(60, 310)">
+        <rect x="20" y="60" width="340" height="50" rx="10" fill="#38B6FF" stroke="#1F1135" stroke-width="6"/>
+        <rect x="35" y="66" width="310" height="38" rx="4" fill="#FFFDF8"/>
+        
+        <rect x="0" y="10" width="370" height="50" rx="10" fill="#FF6B35" stroke="#1F1135" stroke-width="6"/>
+        <rect x="15" y="16" width="340" height="38" rx="4" fill="#FFFDF8"/>
+    </g>
+    <!-- Character sitting happily -->
+    <g transform="translate(140, 100)">
+        <!-- Head -->
+        <circle cx="110" cy="110" r="65" fill="#FFBC80" stroke="#1F1135" stroke-width="6"/>
+        <!-- Beret Artist Hat -->
+        <path d="M45 80 C40 30 160 20 175 75 C185 95 160 105 130 95 C90 100 50 95 45 80 Z" fill="#7C3AED" stroke="#1F1135" stroke-width="6"/>
+        <circle cx="110" cy="35" r="7" fill="#FFC107" stroke="#1F1135" stroke-width="3"/>
+        <!-- Big Round Glasses -->
+        <circle cx="85" cy="110" r="22" fill="#FFFFFF" fill-opacity="0.6" stroke="#1F1135" stroke-width="5"/>
+        <circle cx="135" cy="110" r="22" fill="#FFFFFF" fill-opacity="0.6" stroke="#1F1135" stroke-width="5"/>
+        <line x1="107" y1="110" x2="113" y2="110" stroke="#1F1135" stroke-width="5"/>
+        <circle cx="88" cy="110" r="6" fill="#1F1135"/>
+        <circle cx="138" cy="110" r="6" fill="#1F1135"/>
+        <!-- Big Smile -->
+        <path d="M92 140 Q110 160 128 140" stroke="#1F1135" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <!-- Body holding open sketchbook -->
+        <rect x="65" y="175" width="90" height="80" rx="16" fill="#FF6B35" stroke="#1F1135" stroke-width="6"/>
+        <!-- Open Sketchbook in Hands -->
+        <g transform="translate(30, 210)">
+            <polygon points="10,20 80,35 80,95 10,80" fill="#FFFDF8" stroke="#1F1135" stroke-width="5"/>
+            <polygon points="80,35 150,20 150,80 80,95" fill="#FFFDF8" stroke="#1F1135" stroke-width="5"/>
+            <path d="M25 45 Q45 35 65 50" stroke="#FF6B35" stroke-width="3" fill="none"/>
+            <circle cx="115" cy="50" r="10" fill="#38B6FF"/>
+        </g>
+    </g>
+</svg>

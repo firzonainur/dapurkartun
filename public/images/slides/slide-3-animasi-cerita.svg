@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" fill="none">
+    <defs>
+        <linearGradient id="filmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF6B35"/>
+            <stop offset="100%" stop-color="#FFC107"/>
+        </linearGradient>
+    </defs>
+    <!-- Dynamic Waving Animation Film Strip -->
+    <path d="M60 380 C150 320 220 440 350 360 C480 280 540 380 640 260" stroke="#1F1135" stroke-width="84" stroke-linecap="round" fill="none"/>
+    <path d="M60 380 C150 320 220 440 350 360 C480 280 540 380 640 260" stroke="#FFFDF8" stroke-width="72" stroke-linecap="round" fill="none"/>
+    
+    <!-- Film Holes -->
+    <g stroke="#1F1135" stroke-width="3" fill="#1F1135">
+        <circle cx="100" cy="340" r="5"/> <circle cx="100" cy="385" r="5"/>
+        <circle cx="170" cy="345" r="5"/> <circle cx="170" cy="390" r="5"/>
+        <circle cx="250" cy="370" r="5"/> <circle cx="250" cy="415" r="5"/>
+        <circle cx="340" cy="340" r="5"/> <circle cx="340" cy="385" r="5"/>
+        <circle cx="430" cy="285" r="5"/> <circle cx="430" cy="330" r="5"/>
+        <circle cx="520" cy="305" r="5"/> <circle cx="520" cy="350" r="5"/>
+        <circle cx="600" cy="250" r="5"/> <circle cx="600" cy="295" r="5"/>
+    </g>
+
+    <!-- Flying Clapperboard -->
+    <g transform="translate(180, 80) rotate(-12)">
+        <rect x="0" y="30" width="160" height="120" rx="12" fill="#1F1135" stroke="#1F1135" stroke-width="6"/>
+        <rect x="15" y="50" width="130" height="80" rx="6" fill="#FFFDF8"/>
+        <!-- Clapper top sticks -->
+        <g transform="translate(-10, -5) rotate(-15)">
+            <rect x="10" y="10" width="160" height="28" rx="6" fill="#1F1135"/>
+            <polygon points="30,10 45,10 30,38 15,38" fill="#FFFDF8"/>
+            <polygon points="65,10 80,10 65,38 50,38" fill="#FFFDF8"/>
+            <polygon points="100,10 115,10 100,38 85,38" fill="#FFFDF8"/>
+            <polygon points="135,10 150,10 135,38 120,38" fill="#FFFDF8"/>
+        </g>
+        <text x="35" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="16" fill="#FF6B35">SCENE 01</text>
+        <text x="35" y="110" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#1F1135">TAKE: ACTION!</text>
+    </g>
+
+    <!-- Animation Keyframe Bubbles -->
+    <g transform="translate(420, 70)">
+        <circle cx="80" cy="80" r="75" fill="url(#filmGrad)" stroke="#1F1135" stroke-width="7"/>
+        <polygon points="65,50 110,80 65,110" fill="#FFFDF8" stroke="#1F1135" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+</svg>

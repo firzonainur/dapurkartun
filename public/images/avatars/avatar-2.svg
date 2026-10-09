@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="56" fill="#BAE6FD" stroke="#1F1135" stroke-width="6"/>
+    <!-- Head -->
+    <circle cx="60" cy="60" r="32" fill="#FFFDF8" stroke="#1F1135" stroke-width="5"/>
+    <!-- Hair -->
+    <path d="M30 55 C30 25 90 25 90 55 C80 40 40 40 30 55 Z" fill="#7C3AED" stroke="#1F1135" stroke-width="4"/>
+    <!-- Eyes -->
+    <circle cx="50" cy="62" r="4" fill="#1F1135"/>
+    <circle cx="70" cy="62" r="4" fill="#1F1135"/>
+    <!-- Cheeks -->
+    <circle cx="42" cy="70" r="4" fill="#FF8A8A" opacity="0.6"/>
+    <circle cx="78" cy="70" r="4" fill="#FF8A8A" opacity="0.6"/>
+    <!-- Smile -->
+    <path d="M54 72 Q60 78 66 72" stroke="#1F1135" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- Shirt -->
+    <path d="M32 108 C35 90 85 90 88 108 Z" fill="#38B6FF" stroke="#1F1135" stroke-width="5"/>
+</svg>

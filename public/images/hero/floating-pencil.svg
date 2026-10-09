@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+    <g transform="translate(30, 20) rotate(-35 50 60)">
+        <polygon points="50,10 65,10 65,95 50,95" fill="#FFC107" stroke="#1F1135" stroke-width="4"/>
+        <polygon points="50,95 65,95 57,118" fill="#F4E8D8" stroke="#1F1135" stroke-width="4"/>
+        <polygon points="54,110 60,110 57,118" fill="#1F1135"/>
+        <rect x="50" y="0" width="15" height="10" rx="3" fill="#FF6B35" stroke="#1F1135" stroke-width="4"/>
+    </g>
+</svg>

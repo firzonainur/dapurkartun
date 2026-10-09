@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" fill="none">
+    <defs>
+        <radialGradient id="cauldronGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFD600" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="potGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3C2A55"/>
+            <stop offset="100%" stop-color="#1F1135"/>
+        </linearGradient>
+    </defs>
+    <!-- Background Magic Glow -->
+    <ellipse cx="350" cy="300" rx="260" ry="180" fill="url(#cauldronGlow)"/>
+    
+    <!-- Magic Bubbles & Creativity Popping Out -->
+    <path d="M300 250 C260 140 180 120 140 160" stroke="#38B6FF" stroke-width="8" stroke-linecap="round" stroke-dasharray="16 12" fill="none"/>
+    <path d="M400 240 C460 130 550 140 580 190" stroke="#FFC107" stroke-width="8" stroke-linecap="round" stroke-dasharray="18 10" fill="none"/>
+    
+    <!-- Creative Floating Elements -->
+    <g transform="translate(110, 80) rotate(-15)">
+        <rect x="0" y="0" width="80" height="60" rx="8" fill="#FFFDF8" stroke="#1F1135" stroke-width="5"/>
+        <circle cx="25" cy="25" r="10" fill="#FF6B35"/>
+        <path d="M10 50 L35 30 L55 45 L70 35 L70 50 Z" fill="#38B6FF"/>
+    </g>
+    
+    <g transform="translate(500, 70) rotate(20)">
+        <circle cx="40" cy="40" r="35" fill="#FFC107" stroke="#1F1135" stroke-width="5"/>
+        <ellipse cx="30" cy="32" rx="5" ry="8" fill="#1F1135"/>
+        <ellipse cx="50" cy="32" rx="5" ry="8" fill="#1F1135"/>
+        <path d="M30 48 Q40 60 50 48" stroke="#1F1135" stroke-width="4" stroke-linecap="round" fill="none"/>
+    </g>
+    
+    <!-- The Cauldron / Wajan Kartun Ajaib -->
+    <g transform="translate(180, 220)">
+        <ellipse cx="170" cy="60" rx="150" ry="35" fill="#38B6FF" stroke="#1F1135" stroke-width="7"/>
+        <ellipse cx="170" cy="60" rx="135" ry="25" fill="#FFEAA7"/>
+        <!-- Bubbles on surface -->
+        <circle cx="120" cy="55" r="15" fill="#38B6FF" stroke="#1F1135" stroke-width="4"/>
+        <circle cx="160" cy="50" r="22" fill="#FF6B35" stroke="#1F1135" stroke-width="4"/>
+        <circle cx="210" cy="56" r="16" fill="#FFC107" stroke="#1F1135" stroke-width="4"/>
+        <!-- Pot Belly -->
+        <path d="M20 60 Q10 200 170 200 Q330 200 320 60 Z" fill="url(#potGrad)" stroke="#1F1135" stroke-width="8" stroke-linejoin="round"/>
+        <!-- Pot Handles -->
+        <path d="M15 90 C-15 90 -15 130 15 130" stroke="#1F1135" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M325 90 C355 90 355 130 325 130" stroke="#1F1135" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <!-- Pot Legs -->
+        <rect x="70" y="195" width="28" height="40" rx="8" fill="#1F1135"/>
+        <rect x="240" y="195" width="28" height="40" rx="8" fill="#1F1135"/>
+        <rect x="155" y="198" width="30" height="42" rx="8" fill="#1F1135"/>
+    </g>
+</svg>
